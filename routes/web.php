@@ -18,7 +18,7 @@ use App\Http\Controllers\EmployeeAttendanceController;
 |
 */
 Route::get('/',function(){
-    return redirect('admin/dashboard');
+    return "hello";
 });
 
 
