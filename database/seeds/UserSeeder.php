@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            ['username' => "admin" , "password" => '$2y$10$S8JdcagN45xfzj26hO8WbOp6ly0g3q6ibpwaJ8ntGdHNI9xtzr8B.'],
+            ['username' => "admin" ,"is_admin"=>1, "password" => '$2y$10$S8JdcagN45xfzj26hO8WbOp6ly0g3q6ibpwaJ8ntGdHNI9xtzr8B.'],
         ]);
     }
 }

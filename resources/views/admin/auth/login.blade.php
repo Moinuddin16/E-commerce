@@ -3,7 +3,7 @@
 
 <head>
     @include("admin.partials.head")
-    <title>E-Commerce | Log In </title>
+    <title>Admin | Log In </title>
     <style>
         body {
             background-image: url("public/assets/images/login-bg.jpg");
@@ -30,7 +30,7 @@
                     <div class="card-body p-6">
                         <div class="mb-4 text-center">
                             {{-- <a href="../index.html"><img src="{{asset('public/assets/images/brand/logo/logo-primary.svg')}}" class="mb-2" alt=""></a> --}}
-                            <h3 class="mb-6">User Panel</h3>
+                            <h3 class="mb-6">Admin Panel</h3>
                         </div>
                         <!-- Form -->
                         <form method="POST" action="{{ route('login') }}">
@@ -56,9 +56,7 @@
                                     </span>
                                 @enderror
                             </div>
-                             <div class="justify-content-between text-right align-items-centermb-4 mb-2">
-                                <a href="{{route('register')}}">Create a new account</a>
-                            </div>
+                             
                             <div>
                                 <!-- Button -->
                                 <div class="d-grid">
