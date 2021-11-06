@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\EmployeeAttendanceController;
+use App\Http\Controllers\AdminAuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,8 @@ Route::get('/',function(){
 
 
 Auth::routes();
-
-Route::group(['prefix' => 'admin' ,'middleware' => 'auth'],function () {
+Route::get('admin/login', [AdminAuthenticationController::class,'login']);
+Route::group(['prefix' => 'admin' ,'middleware' => 'is_admin'],function () {
     Route::get('dashboard', [DashboardController::class,'index']);
 
   
