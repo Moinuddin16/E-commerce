@@ -28,14 +28,8 @@
                                             <th>Product Code</th>
                                             <th>Name</th>
                                             <th>Price</th>
+                                            <th>Stock</th>
                                             <th>Details</th>
-                                            <th>Department</th>
-                                            <th>Designation</th>
-                                            <th>Father’s Name</th>
-                                            <th>Mother’s Name</th>
-                                            <th>Gender</th>
-                                            <th>Date of Birth</th>
-                                            <th>Nationality</th>
                                             <th>Photo</th>
                                             <th width="100px">Action</th>
                                         </tr>
@@ -52,7 +46,12 @@
         </div>
     </div>
     </div>
-  
+    <div id="show-details-model">
+        @include('admin.product.product-details-model')
+    </div>
+    <div id="show-product-model">
+        @include('admin.product.product-update-model')
+    </div>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.css"/>
   
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.js"></script>
@@ -61,33 +60,27 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
 
 <script>
-    // $(document).ready(function() {
-    //     var table = $('#datatable').DataTable({
-    //         processing: true,
-    //         serverSide: true,
-    //         ajax: "{{ route('product.index') }}",
-    //         columns: [
-    //             {data: 'employee_code', name: 'employee_code'},
-    //             {data: 'employee_name', name: 'employee_name'},
-    //             {data: 'academy', name: 'academy'},
-    //             {data: 'employee_category', name: 'employee_category'},
-    //             {data: 'department', name: 'department'},
-    //             {data: 'designation', name: 'designation'},
-    //             {data: 'father_name', name: 'father_name'},
-    //             {data: 'mother_name', name: 'mother_name'},
-    //             {data: 'gender', name: 'gender'},
-    //             {data: 'date_of_birth', name: 'date_of_birth'},
-    //             {data: 'nationality', name: 'nationality'},
-    //             {data: 'photo', name: 'photo'},
-    //             {
-    //                 data: 'action', 
-    //                 name: 'action', 
-    //                 orderable: false, 
-    //                 searchable: false
-    //             },
-    //         ]
-    //     });
+    $(document).ready(function() {
+        var table = $('#datatable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('product.index') }}",
+            columns: [
+                {data: 'product_code', name: 'product_code'},
+                {data: 'name', name: 'name'},
+                {data: 'price', name: 'price'},
+                {data: 'stock', name: 'stock'},
+                {data: 'details', name: 'details'},
+                {data: 'photo', name: 'photo'},
+                {
+                    data: 'action', 
+                    name: 'action', 
+                    orderable: false, 
+                    searchable: false
+                },
+            ]
+        });
 
-    // });
+    });
 </script> 
 @endsection

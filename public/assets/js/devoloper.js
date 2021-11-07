@@ -140,23 +140,38 @@ showEmployeeEducationModel = (id) => {
     makeAGetAjaxRequest(baseUrl + '/admin/get-emplpyee-education/'+id,'', successCallback, errorCallback); 
 
 }
-showEmployeeInforamtionModel = (id) => {
+showProductDetailsModal = (id) => {
   
     successCallback = (data) => {
-        $("#show-employee-information-model").html('');
-        $("#show-employee-information-model").html(data);
+        $("#show-details-model").html('');
+        $("#show-details-model").html(data);
+        $('#show-prodcut-details-modal').modal('show');
+    }
+    
+    errorCallback = (data) => {       
+    }
+
+    makeAGetAjaxRequest(baseUrl + '/admin/product-deatils/'+id,'', successCallback, errorCallback); 
+ 
+
+}
+showProductModal = (id) => {
+  
+    successCallback = (data) => {
+        $("#show-product-model").html('');
+        $("#show-product-model").html(data);
         $('#exampleModal2').modal('show');
     }
     
     errorCallback = (data) => {       
     }
 
-    makeAGetAjaxRequest(baseUrl + '/admin/employee-info/'+id+'/edit','', successCallback, errorCallback); 
+    makeAGetAjaxRequest(baseUrl + '/admin/product/'+id+'/edit','', successCallback, errorCallback); 
  
 
 }
 
-deleteEmployeeInforamtion   = (id) => {
+deleteProduct  = (id) => {
     successCallback = (data) => {
         if(data.status == 'success'){
             toastr.success(data.message);
@@ -182,7 +197,7 @@ deleteEmployeeInforamtion   = (id) => {
                 'success'
                 )
                
-                makeAGetAjaxRequest(baseUrl + '/admin/employee-info/delete-data/'+id,'', successCallback, errorCallback); 
+                makeAGetAjaxRequest(baseUrl + '/admin/product/delete-data/'+id,'', successCallback, errorCallback); 
             }
         })
 

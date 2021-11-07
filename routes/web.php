@@ -30,6 +30,9 @@ Route::group(['prefix' => 'admin' ,'middleware' => 'is_admin'],function () {
     Route::get('dashboard', [DashboardController::class,'index']);
 
     // product
+    route::get('product/delete-data/{id}', [ProductController::class,'deleteData']);
+    route::get('product-deatils/{id}', [ProductController::class,'productDetails']);
+    route::post('product-details', [ProductController::class,'productDetailUpdate'])->name('product_details.update');
     Route::resource('product',ProductController::class);
   
 });
