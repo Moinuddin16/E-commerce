@@ -8,6 +8,7 @@ use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\EmployeeInfoController;
 use App\Http\Controllers\EmployeeAttendanceController;
 use App\Http\Controllers\AdminAuthenticationController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,7 @@ use App\Http\Controllers\AdminAuthenticationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',function(){
-    return "hello";
-});
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 
 Auth::routes();
