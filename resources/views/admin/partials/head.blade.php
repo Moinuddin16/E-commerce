@@ -42,5 +42,5 @@
 <!-- endbuild -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
-
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 <link rel="stylesheet" href="{{asset('style.css')}}">
