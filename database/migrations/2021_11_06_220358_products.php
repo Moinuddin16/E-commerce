@@ -17,6 +17,7 @@ class Products extends Migration
             $table->id();
             $table->string('product_code')->unique();
             $table->string('name');
+            $table->string('slug');
             $table->string('price');
             $table->string('stock');
             $table->text('details');

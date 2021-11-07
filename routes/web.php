@@ -2,13 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ValidationController;
-use App\Http\Controllers\EmployeeInfoController;
-use App\Http\Controllers\EmployeeAttendanceController;
-use App\Http\Controllers\AdminAuthenticationController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminAuthenticationController;
+use App\Http\Controllers\Web\HomeController;
 
 /*
 |--------------------------------------------------------------------------
