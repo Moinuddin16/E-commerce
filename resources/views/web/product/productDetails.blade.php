@@ -91,23 +91,8 @@
                                 <div class="col-lg-11">
                                     <h5><strong>@if(isset($item->user)){{$item->user->username}}@endif</strong></h5>
                                     <div class="">
-                                        @php
-                                            $rating = $item->rating;
-                                            $rating_array = array();
-                                            for($i = 1; $i <= 5; $i++){
-                                                if($i <= $rating){
-                                                    $ratingArray[] = '<span class="fa fa-star checked"></span>';
-                                                }else{
-                                                    $ratingArray[] = '<span class="fa fa-star"></span>';
-                                                }
-                                            }
-                                        @endphp
-                                        @foreach ($ratingArray as $ratingItem)
-                                            {!! $ratingItem !!}
-                                        @endforeach
-                                        @php
-                                            unset($ratingArray);
-                                        @endphp
+                                        {{  App\ProductReview::displayRatings($item->rating)}}
+
                                     </div>
                                    
                                     <p >{{$item->review}}</p>
@@ -129,6 +114,6 @@
     
 </div>
 
-<script src="{{asset('public/assets/js/product_details.js')}}"></script>
+<script src="{{asset('public/assets/js/web/product_details.js')}}"></script>
 @endsection
 

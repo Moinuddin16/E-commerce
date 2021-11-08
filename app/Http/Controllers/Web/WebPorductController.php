@@ -13,7 +13,7 @@ class WebPorductController extends Controller
     public function productDetailsPage($slug)
     {
         $product = Product::where('slug', $slug)->first();
-        $productReviews = ProductReview::where('product_id', $product->id)->where('approve',0)->with('user')->get();
+        $productReviews = ProductReview::where('product_id', $product->id)->where('approve',1)->with('user')->get();
 
         return view('web.product.productDetails',compact('product','productReviews'));
     }

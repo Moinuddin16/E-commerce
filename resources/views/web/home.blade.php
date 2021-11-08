@@ -21,11 +21,8 @@
               <h5 class="card-title text-uppercase font-weight-bold">{{$product->name}}</h5>
               
               <div class="mb-2 mt-2 text-center">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
+                {{  App\Product::calculateRating( isset($product->ratings) && count($product->ratings)>0 ? $product->ratings->avg('rating'):0)}}
+               
               </div>
 
              

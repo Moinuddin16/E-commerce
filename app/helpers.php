@@ -20,7 +20,6 @@ if(!function_exists('makeSlug')){
         $slug = Str::slug($slug);
         return $slug;
     }
-
 }
 
 

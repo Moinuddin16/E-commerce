@@ -27,7 +27,8 @@ class HomeController extends Controller
     public function index()
     {
        
-        $products = Product::all();
+        $products = Product::with('ratings')->get();   
+
         return view('web.home',compact('products'));
     }
 }

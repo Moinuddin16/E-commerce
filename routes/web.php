@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Web\WebPorductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminAuthenticationController;
+use App\Http\Controllers\Admin\ProductReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,11 @@ Auth::routes();
 Route::get('admin/login', [AdminAuthenticationController::class,'login']);
 Route::group(['prefix' => 'admin' ,'middleware' => 'is_admin'],function () {
     Route::get('dashboard', [DashboardController::class,'index']);
+
+    // product review
+    Route::get('product-reviews-approve/{id}', [ProductReviewController::class,'approve'])->name('product-reviews');
+    Route::get('product-reviews', [ProductReviewController::class,'index'])->name('product-reviews');
+
 
     // product
     route::get('product/delete-data/{id}', [ProductController::class,'deleteData']);
