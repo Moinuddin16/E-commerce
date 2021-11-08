@@ -4,11 +4,11 @@
 
 Clone the repository
 
-    git clone https://github.com/Moinuddin16/fake-reveiw.git
+    git clone https://github.com/Moinuddin16/E-commerce.git
 
 Switch to the repo folder
 
-    cd fake-reveiw
+    cd E-commerce
 
 Install all the dependencies using composer
 
@@ -27,11 +27,11 @@ Run the database migrations (**Set the database connection in .env before migrat
 
     php artisan migrate
 
-Start the local development server then you can now access the server at http://localhost/fake-review/
+Start the local development server then you can now access the server at http://localhost/E-commerce/
 
 **TL;DR command list**
 
-    git clone  https://github.com/Moinuddin16/fake-reveiw.git
+    git clone https://github.com/Moinuddin16/E-commerce.git
     cd fake-reveiw
     composer install
     cp .env.example .env
@@ -58,7 +58,7 @@ Run the database seeder and you're done
 Thank you for follow those steps and successfully install this application.
 
 ## Admin Panel URL
-http://localhost/fake-review/admin/login
+http://localhost/E-commerce/admin/login
 
 ## Admin Credentials
 username : admin<br>
@@ -66,7 +66,7 @@ password : 123456
 
 
 ## User Panel URL
-http://localhost/fake-review/login
+http://localhost/E-commerce/login
 
 ## User Credentials
 username : user<br>
