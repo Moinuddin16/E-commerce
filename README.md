@@ -4,11 +4,11 @@
 
 Clone the repository
 
-    git clone https://github.com/Moinuddin16/test-project.git
+    git clone https://github.com/Moinuddin16/fake-reveiw.git
 
 Switch to the repo folder
 
-    cd test-project
+    cd fake-reveiw
 
 Install all the dependencies using composer
 
@@ -27,12 +27,12 @@ Run the database migrations (**Set the database connection in .env before migrat
 
     php artisan migrate
 
-Start the local development server then you can now access the server at http://localhost/test-project/
+Start the local development server then you can now access the server at http://localhost/fake-review/
 
 **TL;DR command list**
 
-    git clone  https://github.com/Moinuddin16/test-project.git
-    cd test-project
+    git clone  https://github.com/Moinuddin16/fake-reveiw.git
+    cd fake-reveiw
     composer install
     cp .env.example .env
     php artisan key:generate
@@ -57,6 +57,17 @@ Run the database seeder and you're done
 
 Thank you for follow those steps and successfully install this application.
 
+## Admin Panel URL
+http://localhost/fake-review/admin/login
+
 ## Admin Credentials
-email : admin@sms.com<br>
+username : admin<br>
+password : 123456
+
+
+## User Panel URL
+http://localhost/fake-review/login
+
+## User Credentials
+username : user<br>
 password : 123456
