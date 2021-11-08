@@ -16,16 +16,13 @@
         @foreach($products as $product)
         <div class="col-lg-3 mb-5">
           <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="{{asset($product->photo)}}" alt="Card image cap">
+              <img class="card-img-top" style="height: 288;width:288px" src="{{asset($product->photo)}}" alt="Card image cap">
               <div class="card-body" >
               <h5 class="card-title text-uppercase font-weight-bold">{{$product->name}}</h5>
               
               <div class="mb-2 mt-2 text-center">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
+                {{  App\Product::calculateRating( isset($product->ratings) && count($product->ratings)>0 ? $product->ratings->avg('rating'):0)}}
+               
               </div>
 
              
@@ -36,8 +33,8 @@
               <div class="col-lg-12 text-center stock">Out Off Stock</div>
               @endif
              
- 
-                <a href="#" style="padding: 3px !important" class="mt-2 btn btn-outline-primary  btn-block">See Details</a>
+            
+                <a href="{{url('product-details/'.$product->slug)}}" style="padding: 3px !important" class="mt-2 btn btn-outline-primary  btn-block">See Details</a>
               </div>
             </div>
        </div>

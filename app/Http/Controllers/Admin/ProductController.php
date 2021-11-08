@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use Config;
+use DataTables;
 use App\Product;
+use Illuminate\Support\Str;
+use App\Traits\ImageHandler;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use DataTables;
-use App\Traits\ImageHandler;
-use Config;
+
 class ProductController extends Controller
 {
     use ImageHandler;
@@ -79,10 +81,11 @@ class ProductController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withInput()->withErrors($validator->errors());
         }
-    
+        $slug = makeSlug($request->name);
         $product = new Product();
         $product->product_code = $request->product_code;
         $product->name = $request->name;
+        $product->slug = $slug;
         $product->price = $request->price;
         $product->stock = $request->stock;
         $product->details = $request->details;
@@ -133,11 +136,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $slug = makeSlug($request->name);
+
         $product = Product::find($id);
         $product->product_code = $request->product_code;
         $product->name = $request->name;
         $product->price = $request->price;
         $product->stock = $request->stock;
+        $product->slug = matchSlug($slug,$product->slug);
         $photo = '';
         if($request->hasFile('photo')){
             if(file_exists($product->photo)){
@@ -160,6 +166,7 @@ class ProductController extends Controller
        
     }
 
+  
     /**
      * Remove the specified resource from storage.
      *

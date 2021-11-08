@@ -2,13 +2,12 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ValidationController;
-use App\Http\Controllers\EmployeeInfoController;
-use App\Http\Controllers\EmployeeAttendanceController;
-use App\Http\Controllers\AdminAuthenticationController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Web\WebPorductController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminAuthenticationController;
+use App\Http\Controllers\Admin\ProductReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +27,11 @@ Route::get('admin/login', [AdminAuthenticationController::class,'login']);
 Route::group(['prefix' => 'admin' ,'middleware' => 'is_admin'],function () {
     Route::get('dashboard', [DashboardController::class,'index']);
 
+    // product review
+    Route::get('product-reviews-approve/{id}', [ProductReviewController::class,'approve'])->name('product-reviews');
+    Route::get('product-reviews', [ProductReviewController::class,'index'])->name('product-reviews');
+
+
     // product
     route::get('product/delete-data/{id}', [ProductController::class,'deleteData']);
     route::get('product-deatils/{id}', [ProductController::class,'productDetails']);
@@ -36,3 +40,9 @@ Route::group(['prefix' => 'admin' ,'middleware' => 'is_admin'],function () {
   
 });
 
+route::get('product-details/{slug}', [WebPorductController::class,'productDetailsPage'])->name('product-details.slug');
+
+Route::group(['middleware' => 'is_user'],function () {
+    Route::post('submit-reveiw', [WebPorductController::class,'submitReview']);
+  
+});

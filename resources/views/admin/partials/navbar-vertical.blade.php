@@ -25,6 +25,12 @@
                  </a>
 
              </li>
+             <li class="nav-item active">
+                 <a class="nav-link " href="{{url('admin/product-reviews')}}">
+                     <i data-feather="home" class="nav-icon icon-xs me-2"></i> Product Reviews
+                 </a>
+
+             </li>
          
 
             

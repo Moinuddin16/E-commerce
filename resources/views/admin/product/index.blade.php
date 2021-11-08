@@ -52,35 +52,6 @@
     <div id="show-product-model">
         @include('admin.product.product-update-model')
     </div>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.css"/>
-  
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
+    <script src="{{asset('public/assets/js/admin/product.js')}}"></script>
 
-<script>
-    $(document).ready(function() {
-        var table = $('#datatable').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: "{{ route('product.index') }}",
-            columns: [
-                {data: 'product_code', name: 'product_code'},
-                {data: 'name', name: 'name'},
-                {data: 'price', name: 'price'},
-                {data: 'stock', name: 'stock'},
-                {data: 'details', name: 'details'},
-                {data: 'photo', name: 'photo'},
-                {
-                    data: 'action', 
-                    name: 'action', 
-                    orderable: false, 
-                    searchable: false
-                },
-            ]
-        });
-
-    });
-</script> 
 @endsection

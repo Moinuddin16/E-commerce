@@ -26,36 +26,3 @@
 <script>
     CKEDITOR.replace('details');
 </script>
-<script>
-    $(document).ready(function(){
-        $(document).on('submit', '#product_details_form', function(e){
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            var formData = new FormData(this);
-            $.ajax({
-                url: $(this).attr('action'),
-                type: 'POST',
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function(data){
-                    if(data.status == 'suceess'){
-                        toastr.success(data.message);
-                        $('#show-prodcut-details-modal').modal('hide');
-                        $('#product_details_form')[0].reset();
-                        $('#datatable').DataTable().ajax.reload();
-                    }else{
-                        toastr.error("Something went wrong");
-                    }
-                },
-                error: function(data){
-                    var errors = data.responseJSON;
-                    if(errors.errors){
-                        toastr.error(errors.errors);
-                    }
-                }
-            });
-        });
-    });
-</script>
