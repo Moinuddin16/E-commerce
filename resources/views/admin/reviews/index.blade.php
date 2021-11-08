@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title', 'Products List')
+@section('title', 'Products View List')
 @section('main-content')
 <style>
     .error{
