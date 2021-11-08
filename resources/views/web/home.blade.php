@@ -16,7 +16,7 @@
         @foreach($products as $product)
         <div class="col-lg-3 mb-5">
           <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="{{asset($product->photo)}}" alt="Card image cap">
+              <img class="card-img-top" style="height: 288;width:288px" src="{{asset($product->photo)}}" alt="Card image cap">
               <div class="card-body" >
               <h5 class="card-title text-uppercase font-weight-bold">{{$product->name}}</h5>
               
@@ -36,8 +36,8 @@
               <div class="col-lg-12 text-center stock">Out Off Stock</div>
               @endif
              
- 
-                <a href="#" style="padding: 3px !important" class="mt-2 btn btn-outline-primary  btn-block">See Details</a>
+            
+                <a href="{{url('product-details/'.$product->slug)}}" style="padding: 3px !important" class="mt-2 btn btn-outline-primary  btn-block">See Details</a>
               </div>
             </div>
        </div>

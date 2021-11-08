@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Web\WebPorductController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminAuthenticationController;
-use App\Http\Controllers\Web\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,9 @@ Route::group(['prefix' => 'admin' ,'middleware' => 'is_admin'],function () {
   
 });
 
+route::get('product-details/{slug}', [WebPorductController::class,'productDetailsPage'])->name('product-details.slug');
+
+Route::group(['middleware' => 'is_user'],function () {
+    Route::post('submit-reveiw', [WebPorductController::class,'submitReview']);
+  
+});
