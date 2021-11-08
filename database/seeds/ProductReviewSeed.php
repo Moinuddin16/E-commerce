@@ -21,8 +21,8 @@ class ProductReviewSeed extends Seeder
                 DB::table('product_reviews')->insert([
                 [
                     'product_id' =>rand(1,5),
-                    'user_id'  => 2,
-                    'review' => Str::random(100),
+                    'user_id'  => rand(2,6),
+                    'review' => Str::random(200),
                     'rating' => rand(1,5),
                     'approve' => rand(0,1),
                 ],

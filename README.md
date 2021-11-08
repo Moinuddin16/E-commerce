@@ -56,6 +56,8 @@ Run the database seeder and you're done
     php artisan migrate:refresh
 
 Thank you for follow those steps and successfully install this application.
+## Website URL
+http://localhost/E-commerce/
 
 ## Admin Panel URL
 http://localhost/E-commerce/admin/login
@@ -69,5 +71,17 @@ password : 123456
 http://localhost/E-commerce/login
 
 ## User Credentials
-username : user<br>
+username : user_0<br>
+password : 123456
+
+username : user_1<br>
+password : 123456
+
+username : user_2<br>
+password : 123456
+
+username : user_3<br>
+password : 123456
+
+username : user_4<br>
 password : 123456
