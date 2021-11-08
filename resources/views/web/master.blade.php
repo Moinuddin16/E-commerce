@@ -3,7 +3,7 @@
 
   <head>
 
-    <title>Admin | @yield('title')</title>
+    <title>E-Commerce | @yield('title')</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,16 +15,12 @@
 
   <body>
    
-    <div id="db-wrapper">
-      <!-- navbar vertical -->
-      @include('admin.partials.navbar-vertical')
-       <!-- Page content -->
-      <div id="page-content">
-        @include("admin.partials.header")
+
+        @include("web.partials.menu_bar")
         @yield('main-content')
-    </div>
+      
    
-</div>
+
 
 <!-- Scripts -->
 @include("admin.partials.scripts")

@@ -117,7 +117,7 @@
 
 
             <div class="lh-1 text-center">
-              <h5 class="mb-1">{{Auth::user()->name}}</h5>
+              <h5 class="mb-1">@if(Auth::check()){{Auth::user()->name}}@endif</h5>
               {{-- <a href="#" class="text-inherit fs-6">View my profile</a> --}}
             </div>
             <div class=" dropdown-divider mt-3 mb-2"></div>

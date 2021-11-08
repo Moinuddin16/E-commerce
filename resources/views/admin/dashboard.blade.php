@@ -13,9 +13,7 @@
                   <div class="mb-2 mb-lg-0">
                     <h3 class="mb-0 fw-bold text-white">Dashboard</h3>
                   </div>
-                  {{-- <div>
-                    <a href="#" class="btn btn-white">Create New Project</a>
-                  </div> --}}
+               
                 </div>
               </div>
             </div>
@@ -28,17 +26,17 @@
                   <div class="d-flex justify-content-between align-items-center
                     mb-3">
                     <div>
-                      <h4 class="mb-0"></h4>
+                      <h4 class="mb-0">Total Product</h4>
                     </div>
                     <div class="icon-shape icon-md bg-light-primary text-primary
                       rounded-1">
-                      <i class="bi bi-people fs-4"></i>
+                      <i class="fa fa-cart-plus" aria-hidden="true"></i>
                     </div>
                   </div>
                   <!-- project number -->
                   <div>
-                    {{-- <h1 class="fw-bold">@if(isset($students)){{$students->count()}}@endif</h1> --}}
-                    {{-- <p class="mb-0"><span class="text-dark me-2">1</span>Completed</p> --}}
+                    <h1 class="fw-bold">@if(isset($productsCount)){{$productsCount}}@endif</h1>
+
                   </div>
                 </div>
               </div>

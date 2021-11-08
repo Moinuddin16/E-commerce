@@ -40,7 +40,7 @@ return [
     */
 
     'debug' => env('APP_DEBUG', false),
-
+    'curreny' => env('CURRENCY', '৳'),
     /*
     |--------------------------------------------------------------------------
     | Application URL
