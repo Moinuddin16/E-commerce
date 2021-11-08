@@ -342,8 +342,8 @@ $(document).ready(function () {
                 success: function (data) {
                     toastr.success(data.message);
                     $('#submit-review-from')[0].reset();
-                    $newReview =  makeReview(data);
-                    $('.all_reviews').prepend($newReview);
+                    // $newReview =  makeReview(data);
+                    // $('.all_reviews').prepend($newReview);
                 },
                 error: function (data) {
                 
